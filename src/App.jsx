@@ -6,9 +6,21 @@ import Log from './components/Log.jsx';
 
 function App() {
   const [activePlayer,setActivePlayer] = useState('X');
+  const [gameTurns,setGameTurns] = useState([]);
 
-  function handleSelectSquares () {    
+  function handleSelectSquare (rowIndex,colIndex) {    
     setActivePlayer((curActivePlayer) => curActivePlayer === 'X' ? 'O' : 'X');     
+    setGameTurns((prevTurns) => {
+      let currentPlayer = 'X';
+      if (prevTurns.length > 0 && prevTurns[0].player === 'X') {
+        currentPlayer = 'O'; 
+      }
+
+      const updatedTurns = [{square:{row:rowIndex,col:colIndex},player: currentPlayer},
+      ...prevTurns]
+      
+      return updatedTurns;
+    })
   }
 
   return (
@@ -19,10 +31,9 @@ function App() {
             <Player inintialName='Piet' initialSymbol='X' isActive={activePlayer === 'X'}/>
             <Player inintialName='Pompies' initialSymbol='O' isActive={activePlayer === 'O'}/>
          </ol>
-         <GameBoard onSelectSquare = {handleSelectSquares} activePlayerSymbol = {activePlayer}/>
+         <GameBoard onSelectSquare = {handleSelectSquare}  turns={gameTurns}/>
        </div>
-      LOG
-      <h1>En die aktiewe speler is : {activePlayer}</h1>
+      <Log/>
      </main>
   )
  }
