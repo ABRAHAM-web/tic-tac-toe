@@ -1,13 +1,17 @@
 import { useState } from 'react'
 import '../index.css';
 
-export default function Player ({children,inintialName,initialSymbol,isActive = false}) {
+export default function Player ({children,inintialName,initialSymbol,isActive = false,onChangeName}) {
     let [isEditing,setIsEditing] = useState(false);
     let [selectedSymbol,setSelectedSymbol] = useState(initialSymbol);
     let [playerName,setPlayerName] = useState(inintialName);
 
     function handleEditClick () { 
-        setIsEditing((editing) => (!isEditing))       
+        setIsEditing((editing) => (!isEditing)) 
+        
+        if (isEditing) {
+            onChangeName(symbol, playerName);
+        }
     }
 
     function handleChange (event) {
