@@ -20,10 +20,10 @@ html {
 body {
   background: radial-gradient(
       circle at top,
-      rgba(241, 210, 70, 0.98),
-      rgba(250, 176, 103, 0.87)
+      rgba(185, 236, 176, 0.98),
+      rgba(43, 25, 178, 0.87)
     ),
-    url('bg-pattern-dark.png');
+    url('bg-pattern-dark2.png');
   background-repeat: repeat;
   background-size: 100% 100%, 30% 30%, 100% 100%;
   min-height: 110rem;
@@ -75,20 +75,20 @@ h1 {
 }
 
 #players.highlight-player li.active {
-  border-color: #f6e35a;
+  border-color: #0a34ed;
   animation: pulse 2s infinite ease-in-out;
 }
 
 #players.highlight-player li.active .player-name,
 #players.highlight-player li.active .player-symbol {
-  color: #f6e35a;
+  color: #9b5af6;
 }
 
 #players button {
   width: 3rem;
   border: none;
   background: none;
-  color: #c3ba78;
+  color: #54738f;
   font-size: 0.9rem;
   cursor: pointer;
   transition: color 0.2s;
@@ -97,7 +97,7 @@ h1 {
 }
 
 #players button:hover {
-  color: #f8ca31;
+  color: #1c1c6b;
 }
 
 .player {
@@ -111,7 +111,7 @@ h1 {
   display: inline-block;
   width: 10rem;
   font-size: 1rem;
-  color: #e1dec7;
+  color: #ca3873;
   text-transform: uppercase;
   margin: 0;
   padding: 0.5rem;
@@ -182,7 +182,7 @@ ol {
   width: 8rem;
   height: 8rem;
   border: none;
-  background: #aca788;
+  background: #9c657c;
   color: #3f3b00;
   font-size: 5rem;
   cursor: pointer;
@@ -208,14 +208,14 @@ ol {
   font-family: 'Caprasimo', cursive;
   font-size: 4rem;
   text-align: center;
-  color: #fcd256;
+  color: #0a1672;
   margin: 0;
 }
 
 #game-over p {
   font-size: 2rem;
   text-align: center;
-  color: #e1dec7;
+  color: #47418b;
 }
 
 #game-over button {
@@ -280,7 +280,7 @@ ol {
   cursor: pointer;
   border: none;
   background: transparent;
-  color: #23221f;
+  color: #182ab4;
   font: inherit;
   margin-top: 1.5rem;
 }
